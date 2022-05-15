@@ -14,12 +14,11 @@ d <- d %>%
   mutate(ex_life_at = ex_life + age_start)
 
 p1 <- ggplot(d, aes(age_start, ex_life_at))
-p1 <- p1 + geom_line(size = 0.2) + xlab("Age") + ylab("Life Expetancy") +
+p1 <- p1 + geom_line(size = 0.2) + xlab("Age") + ylab("Life Expectancy") +
   ggtitle("Total population: United States, 2019", subtitle = "Source: CDC")
 
 p2 <- ggplot(d, aes(age_start, surv/100000))
 p2 <- p2 + geom_line(size = 0.2) + xlab("Age") + ylab("Next Year Survival") 
-#ggtitle("Total population: United States, 2019", subtitle = "Source: CDC")
 
 print(p1 + p2)
 
